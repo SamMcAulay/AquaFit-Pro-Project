@@ -13,3 +13,4 @@
 * **Priority Access:** Existing members get early booking windows.
 * **Progression Tracking:** Swimmers move from Beginner → Intermediate → Advanced.
 * **Digital Classroom:** Video resources with tiered access.
+
