@@ -1,16 +1,5 @@
-# Project Risks
-` Discuss the  project risks and how they might be mitigated these risks. (i.e. Consider what the risks are to completing the project, are their health and safety concerns, do you need ethical approval)`
-
-tbc
-
-# Team Roles
-`Have compiled a list of tasks to be completed by each student team member and set a timeline to each task `
-
-tbc
-
-# Project Objectives
-
-Project Objectives
+## Project Objectives
+` These are the goals at minimum this project must achieve  `
 The primary objectives of this project are to:
 • Design and develop a secure booking and payment system
 • Support structured class blocks and skill progression
