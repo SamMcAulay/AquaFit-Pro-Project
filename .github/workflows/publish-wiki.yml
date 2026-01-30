@@ -1,0 +1,22 @@
+name: Publish Docs to Wiki
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+
+jobs:
+  publish-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Sync docs to Wiki
+        uses: swift-nav/github-wiki-publish-action@v1
+        with:
+          wiki_folder: docs
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "Update Wiki content from docs/"
