@@ -6,7 +6,7 @@
 ## Quick Links
 * **[[01-PROJECT-PLAN]]**: Roles, timeline.
 * **[[02-USER-STORIES]]**: Plans and structure for our requirements
-* **[[04-DATABASE-DESIGN]]**: The data structure.
+* **[[03-ARCHITECTURE]]**: The projects tech stack.
 
 ## Key Features
 * **Block-Based Booking:** Users book 6-week courses, not just drop-in sessions.
