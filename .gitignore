@@ -1,0 +1,31 @@
+# --- Dependencies ---
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json # Optional: Keep this if you want strict versioning, but ignore if it causes conflicts early on
+
+# --- NestJS ---
+/dist
+/coverage
+/.env
+*.env
+.env.*
+
+# --- React ---
+build/
+.eslintcache
+.cache
+
+# --- IDE & System ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.log
+
+# --- Testing ---
+/reports
+/junit.xml
+
+# --- Documentation ---
+# Not sure if we will need to ignore anything here tbh, probably not!
