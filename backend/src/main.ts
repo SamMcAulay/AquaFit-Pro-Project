@@ -4,7 +4,9 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
+  app.enableCors({
+    origin: 'http://localhost:5173', // Please remind sam if this is still hardcoded at any point
+  })
   // SWAGGER CONFIGURATION
   const config = new DocumentBuilder()
     .setTitle('AquaFit Pro API')

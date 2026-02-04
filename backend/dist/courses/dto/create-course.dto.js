@@ -2,6 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateCourseDto = void 0;
 class CreateCourseDto {
+    name;
+    instructor;
+    description;
+    capacity;
+    startDate;
 }
 exports.CreateCourseDto = CreateCourseDto;
 //# sourceMappingURL=create-course.dto.js.map
