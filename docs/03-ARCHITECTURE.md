@@ -8,9 +8,9 @@ AquaFit Pro follows a **Monolithic RESTful Architecture**. We chose a TypeScript
 | :--- | :--- | :--- |
 | **Frontend** | **React** | Fast rendering, component-based design, and strong ecosystem. its popularity at the minute is also another benifit. It however can be very poor for SEO |
 | **Backend** | **NestJS** (Node.js) | Provides strict architectural patterns (Modules, Controllers, Services) effectively matching the "Robustness" requirement, It fills the same role as spring, However without needing to use java|
-| **Database** | N/A | N/A |
-| **Auth** | N/A | N/A |
-| **Payments** | N/A | N/A |
+| **Database** | PostgreSql | Direct query input wihtin code gives flexability, gives room for error, and integrates well with nestJS |
+| **Auth** | Passport.js + JWT | Nest has an inbuilt module for passport, and building our own auth flow |
+| **Payments** | Stripe | The gold standard at the minute, and a library is provided in react |
 
 ---
 
