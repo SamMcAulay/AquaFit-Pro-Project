@@ -74,7 +74,6 @@ The project brief requires a "scalable system architecture" and "competence in f
 * *Result:* We achieve the same enterprise-grade structure required for the assignment, but in a modern Technology, That is super popular at the moment. (I also really didn't want to use java)
 
 - *2. Unified Language (TypeScript)*
-
 Our frontend is built in **React**, which uses JavaScript/TypeScript.
 * **With Spring Boot:** We would need to context-switch between Java (Backend) and TypeScript (Frontend). We would also have to manually duplicate data models (e.g., creating a `User` class in Java and a `User` interface in TypeScript).
 * **With NestJS:** We use **TypeScript Or Javascript** across the entire stack. We can share "Type Interfaces" between backend and frontend.
@@ -89,7 +88,39 @@ N/A
 
 ## 5. Key Workflows
 
-N/A
+This Section explains the life cycle of the most important features.
+Use this to understand how the Frontend and backend communicate.
+
+### Workflow A: The booking loop 
+
+1. User Action
+  - User clicks "book now" (or whatever we name it) on a course card.
+  - frontend sends a POST request to '/bookings' with the user ID and course ID
+
+2. Backend Validation
+  - The API checks: Does the course exist?
+  - The API checks: Is there space left in the course
+  - If NO: Returns error '404 bad request' (course full)
+
+3. Completion
+  - Backend sends back a '201 Created' success message
+  - frontend updates the UI to show "Booking successful!" and reduces the spots displayed
+
+### Workflow B: Course Creation
+
+1. User Action:
+  - Instructor fills out the "add course" form. Name, date, capacity, whatever else.
+  - Frontend validates inputs (no funky symbols,capacity cant be negative, ect)
+
+2. Backend Processing:
+  - Frontend sends POST to '/courses'.
+  - Backend recieves the data (DTO)
+  - Backend converts the date string into a real data object
+
+3. Persistence
+  - Backend saves the new course to the database
+  - the new course is immediately availible to be fetched by all users
+
 
 
 
