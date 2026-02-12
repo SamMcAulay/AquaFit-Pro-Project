@@ -4,6 +4,10 @@
 
 ##  Customers (Parents/Swimmers)
 
+As a customer
+I want to Book a course
+- Verify there is a button to book
+
 ##  Instructors
 
 ##  Administrators
