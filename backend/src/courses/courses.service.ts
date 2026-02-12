@@ -49,9 +49,9 @@ export class CoursesService {
     const newCourse = {
       id: newId,
       ...createCourseDto, // Copies name, instructor, description, capacity
-      
+
       // Convert string "2024-03-01" to real Date object
-      startDate: new Date(createCourseDto.startDate), 
+      startDate: new Date(createCourseDto.startDate),
     };
 
     // Save to our "Database"
@@ -103,10 +103,10 @@ export class CoursesService {
     const updatedCourse = {
       ...this.courses[index], // Keep old data
       ...updateCourseDto,     // Overwrite with new data
-      
+
       // If new date exists, make it a Date object. If not, keep the old Date object.
-      startDate: updateCourseDto.startDate 
-        ? new Date(updateCourseDto.startDate) 
+      startDate: updateCourseDto.startDate
+        ? new Date(updateCourseDto.startDate)
         : this.courses[index].startDate,
     };
 
