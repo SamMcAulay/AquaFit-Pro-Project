@@ -121,6 +121,24 @@ Use this to understand how the Frontend and backend communicate.
   - Backend saves the new course to the database
   - the new course is immediately availible to be fetched by all users
 
+### Workflow C: User Authentication
+
+1. User Action
+  - User enters Email and Password on the Login screen
+  - Frontend sends POST to '/auth/login'.
+
+2. Verification:
+  - Backend looks up the user in the database
+  - Backend hashes the entered password and compares it to stored entries.
+
+3. Token Issue:
+  - If match: backend generates a JWT
+  - backend sends the token back to the frontend
+
+4. Session:
+  - Frontend stores the token (in memory or cookies)
+  - for all future requests, the frontend will attach the token to that user/session
+
 
 
 
