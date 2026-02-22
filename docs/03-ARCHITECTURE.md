@@ -84,7 +84,36 @@ NestJS is built specifically for RESTful architectures. Its ecosystem (Passport 
 
 ## 4. Frontend Architecture (React)
 
-N/A
+The frontend follows a Component-Based Architecture using React. The goal is tos separate UI rendering, state management, and API communication, ensuring maintainability and scalability.
+Structure Overview
+
+The frontend is organised into logical layers:
+
+1.  **Pages**
+
+* Represent full screens (e.g., Schedule, Login, Dashboard).
+* Responsible for layout and calling backend services.
+* Connected to routes using React Router.
+
+2.  **Components**
+
+* Reusable UI elements (e.g., CourseCard, BookingButton, Navbar).
+* Stateless where possible, receiving data via props.
+* Promote consistency and reduce duplication.
+
+3. **Services (API Layer)**
+
+* Centralised functions for HTTP requests (e.g., /courses, /bookings, /auth).
+* Automatically attach JWT tokens to secure requests.
+* Keeps networking logic separate from UI logic.
+
+4. **State Management**
+
+* Local state (useState) for forms and UI controls.
+* Global authentication state managed via Context.
+* Server data fetched from the backend and updated after mutations (e.g., booking creation).
+
+
 
 ## 5. Key Workflows
 
