@@ -5,6 +5,9 @@ yarn-error.log
 package-lock.json # Optional: Keep this if you want strict versioning, but ignore if it causes conflicts early on
 
 # --- NestJS ---
+dist/
+coverage/
+backend/src/generated/prisma/
 /dist
 /coverage
 /.env
