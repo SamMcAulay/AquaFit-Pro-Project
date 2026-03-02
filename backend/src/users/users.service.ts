@@ -1,19 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UsersService {
   constructor(private prisma: PrismaService) {}
-
-  create(createUserDto: CreateUserDto) {
-    return this.prisma.user.create({
-      data: {
-        email: createUserDto.email,
-      },
-    });
-  }
 
   findAll() {
     return this.prisma.user.findMany();
@@ -36,5 +27,13 @@ export class UsersService {
 
   remove(id: number) {
     return this.prisma.user.delete({ where: { id } });
+  }
+
+  async setRole(id: number, role: 'MEMBER' | 'INSTRUCTOR' | 'ADMIN') {
+    return this.prisma.user.update({
+      where: { id },
+      data: { role },
+      select: { id: true, email: true, role: true, createdAt: true },
+    });
   }
 }
