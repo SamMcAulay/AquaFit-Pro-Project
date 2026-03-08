@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 // Define what the data looks like
 interface Course {
@@ -51,9 +52,9 @@ export const Courses = () => {
 
             <p className="text-gray-700 mt-2">{course.description}</p>
             
-            {/* Format the Date String to look nice */}
-            <div className="mt-4 text-sm text-gray-500 font-medium">
-              Starts: {new Date(course.startDate).toLocaleDateString()}
+            <div className="mt-4 flex items-center justify-between gap-4">
+              <div className="text-sm text-gray-500 font-medium">Starts: {new Date(course.startDate).toLocaleDateString()}</div>
+              <Link to={`/booking?courseId=${course.id}`} className="ml-auto px-3 py-1 rounded bg-gradient-to-r from-teal-400 to-sky-500 text-white text-sm font-medium">Book</Link>
             </div>
           </div>
         ))}

@@ -1,31 +1,27 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
-import { Courses } from './pages/Courses'; 
-
-// Simple Home Placeholder (We can keep this for now)
-const Home = () => (
-  <div className="p-10">
-    <h1 className="text-3xl font-bold text-gray-800">Home Page</h1>
-    <p className="mt-4 text-gray-600">Welcome to AquaFit Pro!</p>
-  </div>
-);
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { Courses } from './pages/Courses';
+import { Home } from './pages/Home';
+import { Booking } from './pages/Booking';
+import { Contact } from './pages/Contact';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
-        {/* Navigation Bar */}
-        <nav className="flex items-center gap-6 bg-white p-4 shadow-sm">
-          <div className="mr-4 text-xl font-bold text-blue-800">AquaFit Pro</div>
-          <Link to="/" className="font-medium hover:text-blue-600">Home</Link>
-          <Link to="/courses" className="font-medium hover:text-blue-600">Courses</Link>
-        </nav>
+      <div className="min-h-screen bg-gradient-to-b from-cyan-50 via-sky-50 to-indigo-50 text-gray-900 font-sans">
+        <Header />
 
-        {/* Page Content */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/courses" element={<Courses />} /> {/* Now uses the imported file */}
-        </Routes>
+        <main className="py-8">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+
+        <Footer />
       </div>
     </Router>
   );
