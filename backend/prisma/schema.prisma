@@ -23,9 +23,14 @@ enum Role {
 
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  passwordHash String
-  role Role @default(MEMBER)
-  createdAt DateTime @default(now())
+  id                  Int      @id @default(autoincrement())
+  email               String   @unique
+  passwordHash        String
+  role                Role     @default(MEMBER)
+  createdAt           DateTime @default(now())
+  failedLoginAttempts Int      @default(0)
+  lockedUntil         DateTime?
+
+  passwordResetTokenHash String?
+  passwordResetExpiresAt DateTime?
 }
