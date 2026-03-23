@@ -17,15 +17,25 @@ enum Role {
   MEMBER
   INSTRUCTOR
   ADMIN
-
 }
 
-
-
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
   passwordHash String
-  role Role @default(MEMBER)
-  createdAt DateTime @default(now())
+  role         Role     @default(MEMBER)
+  createdAt    DateTime @default(now())
+
+  courses Course[] @relation("InstructorCourses")
+}
+
+model Course {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  capacity    Int
+  createdAt   DateTime @default(now())
+
+  instructorId Int?
+  instructor   User? @relation("InstructorCourses", fields: [instructorId], references: [id])
 }

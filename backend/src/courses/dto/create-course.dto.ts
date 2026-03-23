@@ -1,7 +1,14 @@
+import { IsInt, IsOptional, IsString, Min } from 'class-validator';
+
 export class CreateCourseDto {
-  name: string;
-  instructor: string;
-  description: string;
+  @IsString()
+  title: string;
+
+  @IsOptional()
+  @IsString()
+  description?: string;
+
+  @IsInt()
+  @Min(1)
   capacity: number;
-  startDate: string; // User sends "2024-03-01" (String)
 }
